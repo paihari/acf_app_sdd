@@ -9,7 +9,7 @@
 
 The Avaloq Cloud Framework (ACF) is a collection of deployment scripts that connect cloud services running on Azure, AWS or Google with applications running on Oracle Cloud Infrastructure (OCI). [![License](https://img.shields.io/badge/license-apache-green)](https://www.apache.org/licenses/LICENSE-2.0)
 
-## Sensitive Data Deiscovery Module
+## Sensitive Data Discovery Module
 ...
 
 ## Contributing
