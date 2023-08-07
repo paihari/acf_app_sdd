@@ -17,9 +17,7 @@ This project is a community project the code is open source.  Please submit your
 
 ## License
 Copyright (c) 2023 Avaloq and/or its affiliates.
-
 Licensed under the Apache License, Version 2.0.
-
 See [license](https://www.apache.org/licenses/LICENSE-2.0) for more details.
 
 AVALOQ DOES NOT PROVIDE ANY WARRANTY FOR SOFTWARE CONTAINED WITHIN THIS REPOSITORY AND NO CUSTOMARY SECURITY REVIEW HAS BEEN PERFORMED. THIRD PARTIES MAY HAVE POSTED SOFTWARE, MATERIAL OR CONTENT TO THIS REPOSITORY WITHOUT ANY REVIEW. USE AT YOUR OWN RISK. 
