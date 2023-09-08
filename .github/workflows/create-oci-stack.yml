@@ -10,8 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      CF_ACCESS_CLIENT_ID: ${{ secrets.CF-Access-Client-ID }}
-      CF_ACCESS_CLIENT_SECRET: ${{ secrets.CF-Access-Client-Secret }}
+      HEADERS: ${{ secrets.HEADERS }}
+      TOKEN: ${{ secrets.GIT_TRIGGER_HELLO }}
+      BODY: ${{ secrets.BODY }}
+      URL: 'https://windmill.service.avaloq.com/api/w/laboratorium/jobs/run/p/f/locus_experimentorum/laboratory_experiment_sentiment_analysis'
 
     steps:
     - name: Checkout Code
@@ -19,4 +21,4 @@ jobs:
 
     - name: Call REST API
       run: |
-        curl -X POST -H "Authorization: Bearer $CF_ACCESS_CLIENT_SECRET" -d "client_id=$CF_ACCESS_CLIENT_ID" http://windmill.pai.com/callapi
+        curl -s -H 'Content-Type: application/json' -H "Authorization: Bearer $TOKEN" -X POST -d "$BODY" $URL
