@@ -1,0 +1,22 @@
+name: Call REST API on Commit
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  call_api:
+    runs-on: ubuntu-latest
+
+    env:
+      CF_ACCESS_CLIENT_ID: ${{ secrets.CF-Access-Client-ID }}
+      CF_ACCESS_CLIENT_SECRET: ${{ secrets.CF-Access-Client-Secret }}
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Call REST API
+      run: |
+        curl -X POST -H "Authorization: Bearer $CF_ACCESS_CLIENT_SECRET" -d "client_id=$CF_ACCESS_CLIENT_ID" http://windmill.pai.com/callapi
