@@ -20,5 +20,5 @@ jobs:
     - name: Call REST API
       run: |
         echo "Calling the API"
-        echo "$(curl -s -I https://google.com|grep Server)" abc | tr -d "\r" 
+        echo "$(curl -s -I http://google.com)"
         
