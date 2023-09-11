@@ -20,5 +20,5 @@ jobs:
     - name: Call REST API
       run: |
         echo "Calling the API"
-        response = $(curl -s -H 'Content-Type: application/json' -H "Authorization: Bearer $TOKEN" -X POST -d "$BODY" $URL)
-        echo "Response from CURL $response"
+        echo $(curl -s -H 'Content-Type: application/json' -H "Authorization: Bearer $TOKEN" -X POST -d "$BODY" $URL)
+        
