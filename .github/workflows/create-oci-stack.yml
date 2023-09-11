@@ -20,6 +20,6 @@ jobs:
     - name: Call REST API
       run: |
         echo "Calling the API"
-        echo "$(curl -s -I http://google.com)"
-        echo $(curl -s -H 'Content-Type: application/json' -H "Authorization: Bearer $TOKEN" -X POST -d "$BODY" $URL)
+        echo "$(curl -s -I $URL)"
+    #   echo $(curl -s -H 'Content-Type: application/json' -H "Authorization: Bearer $TOKEN" -X POST -d "$BODY" $URL)
         
