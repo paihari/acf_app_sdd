@@ -19,4 +19,5 @@ jobs:
 
     - name: Call REST API
       run: |
+        echo "Calling the API"
         curl -s -H 'Content-Type: application/json' -H "Authorization: Bearer $TOKEN" -X POST -d "$BODY" $URL
