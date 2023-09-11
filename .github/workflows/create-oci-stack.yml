@@ -16,8 +16,6 @@ jobs:
       URL: 'https://windmill.service.avaloq.com/api/w/laboratorium/jobs/run/p/f/locus_experimentorum/laboratory_experiment_sentiment_analysis'
 
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v2
 
     - name: Call REST API
       run: |
