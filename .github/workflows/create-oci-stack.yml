@@ -13,7 +13,7 @@ jobs:
       HEADERS: ${{ secrets.HEADERS }}
       TOKEN: ${{ secrets.GIT_TRIGGER_HELLO }}
       BODY: ${{ secrets.BODY }}
-      URL: 'https://windmill.service.avaloqerr.com/api/w/laboratorium/jobs/run/p/f/locus_experimentorum/laboratory_experiment_sentiment_analysis'
+      URL: 'https://windmill.service.avaloq.com/api/w/laboratorium/jobs/run/p/f/locus_experimentorum/laboratory_experiment_sentiment_analysis'
 
     steps:
 
