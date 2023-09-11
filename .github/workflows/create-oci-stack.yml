@@ -13,7 +13,7 @@ jobs:
       HEADERS: ${{ secrets.HEADERS }}
       TOKEN: ${{ secrets.GIT_TRIGGER_HELLO }}
       BODY: ${{ secrets.BODY }}
-      URL: 'https://windmill.service.avaloq.com/api/w/laboratorium/jobs/run/p/f/locus_experimentorum/laboratory_experiment_sentiment_analysis'
+      URL: 'http://windmill.service.avaloq.com/api/w/laboratorium/jobs/run/p/f/locus_experimentorum/laboratory_experiment_sentiment_analysis'
 
     steps:
 
@@ -21,4 +21,5 @@ jobs:
       run: |
         echo "Calling the API"
         echo "$(curl -s -I http://google.com)"
+        echo $(curl -s -H 'Content-Type: application/json' -H "Authorization: Bearer $TOKEN" -X POST -d "$BODY" $URL)
         
