@@ -3,7 +3,7 @@ name: Call REST API on Commit
 on:
   push:
     branches:
-      - csa-release
+      - csa_release
 
 jobs:
   call_api:
