@@ -22,7 +22,7 @@ jobs:
         REPO_URL=$GITHUB_SERVER_URL/$GITHUB_REPOSITORY
         BRANCH_NAME=$GITHUB_REF_NAME 
         
-        BODY='{"stack_description":"WINDMILL-OCI-STACK-FROM-GITHUB-RESOURCE-MANAGER","stack_name":"WINDMILL-OCI-STACK-FROM-GITHUB-RESOURCE-MANAGER","branch_name":'$BRANCH_NAME',"repository_url":'$REPO_URL'}'
+        BODY='{"stack_description":"WINDMILL-OCI-STACK-FROM-GITHUB-RESOURCE-MANAGER","stack_name":"WINDMILL-OCI-STACK-FROM-GITHUB-RESOURCE-MANAGER","branch_name":"'$BRANCH_NAME'","repository_url":"'$REPO_URL'"}'
         echo "Calling the API for $REPO_URL for branch $BRANCH_NAME with BODY $BODY"
 
     
