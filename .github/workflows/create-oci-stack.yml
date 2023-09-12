@@ -21,21 +21,9 @@ jobs:
       run: |
         REPO_URL=$GITHUB_SERVER_URL/$GITHUB_REPOSITORY
         BRANCH_NAME=$GITHUB_REF_NAME 
-        echo "Calling the API for $REPO_URL for branch $BRANCH_NAME"
-        BODY='{"stack_description":"WINDMILL-OCI-STACK-FROM-GITHUB-RESOURCE-MANAGER","stack_name":"WINDMILL-OCI-STACK-FROM-GITHUB-RESOURCE-MANAGER","branch_name":$BRANCH_NAME,"repository_url":$REPO_URL}'
         
-        UUID=$(curl -s -H 'Content-Type: application/json' -H "Authorization: Bearer $CSA_GIT_HUB_WINDMILL" -H "CF-Access-Client-Id: $CF_ACCESS_CLIENT_ID" -H "CF-Access-Client-Secret: $CF_ACCESS_CLIENT_SECRET"  -X POST -d $BODY $URL)
-        CHECK_URL="https://windmill.service.avaloq.com/api/w/cloud-and-infra-lab/jobs_u/completed/get_result_maybe/$UUID"
-        while true; do  
-          RESPONSE=$(curl -s -H "Authorization: Bearer $CSA_GIT_HUB_WINDMILL" -H "CF-Access-Client-Id: $CF_ACCESS_CLIENT_ID" -H "CF-Access-Client-Secret: $CF_ACCESS_CLIENT_SECRET" $CHECK_URL)
-          COMPLETED=$(echo $RESPONSE | jq .completed)
-          if [ "$COMPLETED" = "true" ]; then
-            echo $RESPONSE | jq .result
-            break
-          else
-            sleep 1
-          fi    
-        done  
+        BODY='{"stack_description":"WINDMILL-OCI-STACK-FROM-GITHUB-RESOURCE-MANAGER","stack_name":"WINDMILL-OCI-STACK-FROM-GITHUB-RESOURCE-MANAGER","branch_name":$BRANCH_NAME,"repository_url":$REPO_URL}'
+        echo "Calling the API for $REPO_URL for branch $BRANCH_NAME with BODY $BODY"
 
     
         
