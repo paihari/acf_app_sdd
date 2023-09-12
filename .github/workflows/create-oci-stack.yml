@@ -10,16 +10,14 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      HEADERS: ${{ secrets.HEADERS }}
-      TOKEN: ${{ secrets.GIT_TRIGGER_HELLO }}
-      BODY: ${{ secrets.BODY }}
-      URL: 'http://windmill.service.avaloq.com/api/w/laboratorium/jobs/run/p/f/locus_experimentorum/laboratory_experiment_sentiment_analysis'
-
+      CSA_GIT_HUB_WINDMILL: ${{ secrets.CSA_GIT_HUB_WINDMILL }}
+      CF_ACCESS_CLIENT_ID: ${{ secrets.CF_ACCESS_CLIENT_ID }}
+      CF_ACCESS_CLIENT_SECRET: ${{ secrets.CF_ACCESS_CLIENT_SECRET }}
+      
     steps:
-
     - name: Call REST API
       run: |
         echo "Calling the API"
-        echo "$(curl -s -v -I $URL)"
+        curl -s -H 'Content-Type: application/json' -H "Authorization: Bearer $CSA_GIT_HUB_WINDMILL" -H "CF-Access-Client-Id: $CF_ACCESS_CLIENT_ID" -H "CF-Access-Client-Secret: $CF_ACCESS_CLIENT_SECRET"  -X POST -d "{}" https://windmill.service.avaloq.com/api/w/laboratorium/jobs/run/p/f/locus_experimentorum/rest__fetch_example
     
         
