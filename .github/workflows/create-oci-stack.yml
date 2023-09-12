@@ -19,7 +19,8 @@ jobs:
     steps:
     - name: Call REST API
       run: |
-        echo "Calling the API"
+        echo "Calling the API for $GITHUB_REPOSITORY"
+        
         UUID=$(curl -s -H 'Content-Type: application/json' -H "Authorization: Bearer $CSA_GIT_HUB_WINDMILL" -H "CF-Access-Client-Id: $CF_ACCESS_CLIENT_ID" -H "CF-Access-Client-Secret: $CF_ACCESS_CLIENT_SECRET"  -X POST -d "{}" $URL)
         CHECK_URL="https://windmill.service.avaloq.com/api/w/laboratorium/jobs_u/completed/get_result_maybe/$UUID"
         while true; do  
